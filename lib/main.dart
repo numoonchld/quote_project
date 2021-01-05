@@ -10,6 +10,12 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = [
+    'One cannot separate prunes from determined foxes.',
+    'Their nectarine was, in this moment, a powerful grapefruit.',
+    'Some posit the rational frog to be less than happy.',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +25,9 @@ class _QuoteListState extends State<QuoteList> {
         title: Text('List of Quotes'),
         elevation: 20.00,
         shadowColor: Colors.red[870],
+      ),
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
