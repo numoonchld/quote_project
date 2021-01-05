@@ -37,7 +37,16 @@ class _QuoteListState extends State<QuoteList> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 0.0),
         child: Column(
-          children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+          children: quotes
+              .map((quote) => QuoteCard(
+                    quote: quote,
+                    delete: () {
+                      setState(() {
+                        quotes.remove(quote);
+                      });
+                    },
+                  ))
+              .toList(),
         ),
       ),
     );
